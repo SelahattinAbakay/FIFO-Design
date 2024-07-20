@@ -105,34 +105,17 @@ architecture behavior of tb_fifo_module is
             wait    for clk_period  *   3;
     end process;
     
-    --data_send_process:  process begin
-    --    data_send   <=  x"63";
-    --        wait    for clk_period  *   6;
-    --    data_send   <=  x"64";
-    --        wait    for clk_period  *   6;
-    --    data_send   <=  x"65";
-    --        wait    for clk_period  *   6;
-    --    
-    --end process;   
-    
-    -- Stimulus process
-    file_process: process
-        file data_file : text open read_mode is "file_readed.txt"; -- Dosya tanımlaması
-        variable line_buffer : line;
-        variable int_data : natural;
-    begin
-    
-    
-        while not endfile(data_file) loop
-            readline(data_file, line_buffer);
-            read(line_buffer, int_data);
-            data_send <= std_logic_vector(to_unsigned(int_data, 8));
-            wait for 20 ns;
-        end loop;
+    data_send_process:  process begin
+        data_send   <=  x"63";
+            wait    for clk_period  *   6;
+        data_send   <=  x"64";
+            wait    for clk_period  *   6;
+        data_send   <=  x"65";
+            wait    for clk_period  *   6;
         
-       
-        wait;
-    end process;
+    end process;   
+    
+
 
 end behavior;
 
