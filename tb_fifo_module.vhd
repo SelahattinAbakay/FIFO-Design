@@ -116,7 +116,7 @@ architecture behavior of tb_fifo_module is
     --end process;   
     
     -- Stimulus process
-    stim_proc: process
+    file_process: process
         file data_file : text open read_mode is "file_readed.txt"; -- Dosya tanımlaması
         variable line_buffer : line;
         variable int_data : natural;
