@@ -20,8 +20,6 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
-use std.textio.all; -- textio kütüphanesi ekleniyor
-use ieee.std_logic_textio.all;
 
 entity tb_fifo_module is
 end tb_fifo_module;
